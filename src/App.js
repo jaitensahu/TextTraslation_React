@@ -24,7 +24,6 @@ function App() {
     }
   }
 async function userInputData(text, inputLang, targetLang){
-  // console.log(text, inputLang, targetLang);
   const options2 = {
     method: 'POST',
     url: 'https://text-translator2.p.rapidapi.com/translate',
@@ -52,6 +51,7 @@ async function userInputData(text, inputLang, targetLang){
   }, []);
 
   return <div className="App">
+  <h1>Text Translator</h1>
     <Inputfield language={languages} userInputData={userInputData} translated={translatedText}/>
   </div>;
 }

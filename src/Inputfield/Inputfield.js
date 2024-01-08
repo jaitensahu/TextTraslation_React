@@ -14,27 +14,37 @@ const Inputfield = (props) => {
     );
   }
 
- 
-
   return (
     <div className="Container">
       <div className="inputContainer">
         <div className="srcContainer">
           {/* Input Language */}
-          <select name="srcLang" id="" ref={inputLang} className="srcLanguage">
+    
+
+
+          <select  name="srcLang" id="" ref={inputLang} className="srcLanguage">
             <option value="">Select Language</option>
             {props.language.map((ele, idx) => {
-              return <option key={idx+"inp"} value={ele.code}>{ele.name}</option>;
+              return (
+                <option key={idx + "inp"} value={ele.code}>
+                  {ele.name}
+                </option>
+              );
             })}
             ;
           </select>
-          <textarea
-            ref={textInput}
-            name=""
-            id=""
-            cols="30"
-            rows="10"
-          ></textarea>
+          <div className="form-control">
+            <textarea
+              className="input input-alt"
+              ref={textInput}
+              name=""
+              id=""
+              cols="30"
+              rows="10"
+              placeholder="Enter text to convert..."
+            ></textarea>
+            <span class="input-border input-border-alt"></span>
+          </div>
         </div>
         <div className="targetContainer">
           {/* Target Language */}
@@ -46,14 +56,42 @@ const Inputfield = (props) => {
           >
             <option value="">Select Language</option>
             {props.language.map((ele, idx) => {
-              return <option key={idx+"target"} value={ele.code}>{ele.name}</option>;
+              return (
+                <option key={idx + "target"} value={ele.code}>
+                  {ele.name}
+                </option>
+              );
             })}
             ;
           </select>
-          <div className="translatedText">{props.translated}</div>
+          <div className="form-control">
+            <textarea
+              value={props.translated}
+              className="input input-alt"
+              name=""
+              id=""
+              cols="30"
+              rows="10"
+              placeholder="Translated Text"
+            ></textarea>
+            <span class="input-border input-border-alt"></span>
+          </div>
+          {/* <div className="translatedText">{props.translated}</div> */}
         </div>
       </div>
-      <button onClick={getInput}>Translate</button>
+      {/* <button onClick={getInput}>Translate</button> */}
+      <button alt="Translate" onClick={getInput}>
+        <i>T</i>
+        <i>r</i>
+        <i>a</i>
+        <i>n</i>
+        {/* <i>&nbsp;</i> */}
+        <i>s</i>
+        <i>l</i>
+        <i>a</i>
+        <i>t</i>
+        <i>e</i>
+      </button>
     </div>
   );
 };
