@@ -1,0 +1,19 @@
+.inputContainer{
+    width: 100%;
+    
+    display: flex;
+    justify-content: space-between;
+}
+
+.srcContainer, .targetContainer{
+    display: flex;
+    flex-direction: column;
+}
+
+.Container{
+    width: 100%;
+    max-width: 600px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
